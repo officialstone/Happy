@@ -938,11 +938,11 @@ int generateMTRandom(unsigned int s, int range)
 
 
 static const int64 nMinSubsidy = 10 * COIN;
-static const int CUTOFF_HEIGHT = POW_CUTOFF_HEIGHT;	// Height at the end of 7 Days
+static const int CUTOFF_HEIGHT = 201600;	// Height at the end of 7 Days
 // miner's coin base reward based on nBits
 int64 GetProofOfWorkReward(int nHeight, int64 nFees, uint256 prevHash)
 {
-    int64 nSubsidy = 1000 * COIN;
+    int64 nSubsidy = 10 * COIN;
 
      if(nHeight == 1)
 	{
@@ -962,6 +962,11 @@ int64 GetProofOfWorkReward(int nHeight, int64 nFees, uint256 prevHash)
       else if(nHeight < 10000)
 	{
 		nSubsidy = 1200 * COIN;
+		return nSubsidy + nFees;
+     }
+      else if(nHeight < 20160)
+	{
+		nSubsidy = 1000 * COIN;
 		return nSubsidy + nFees;
      }
       else if(nHeight > CUTOFF_HEIGHT)
