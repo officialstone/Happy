@@ -2119,7 +2119,7 @@ bool CBlock::AcceptBlock()
     int nHeight = pindexPrev->nHeight+1;
 
 
-    if (IsProofOfWork() && nHeight > POW_CUTOFF_HEIGHT)
+    if (IsProofOfWork() && nHeight > CUTOFF_HEIGHT)
              return DoS(100, error("AcceptBlock() : No proof-of-work allowed anymore (height = %d)", nHeight));
 
     // Check proof-of-work or proof-of-stake
