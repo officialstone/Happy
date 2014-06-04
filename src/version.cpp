@@ -11,7 +11,7 @@
 const std::string CLIENT_NAME("Happycoin");
 
 // Client version number
-#define CLIENT_VERSION_SUFFIX   "-BETA-HAPPY16"
+#define CLIENT_VERSION_SUFFIX   "-BETA-HAPPY20"
 
 
 // The following part of the code determines the CLIENT_BUILD variable.
